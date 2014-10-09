@@ -93,7 +93,7 @@ function snakeUpdate(){
  * ----------------------------------------------------------------------------
  */
 
-function foodInitialize() {
+function foodInitialize() { 
     food = {
         x: 0,
         y: 0
@@ -113,36 +113,3 @@ function setFoodPosition(){
     food.x = randomX;
     food.y = randomY;
 }
-var dir;
- $(document).keydown(function (e) {
-            switch(e.which) {
-                case 38:
-                    if(dir !== 2) {
-                        newdir = 0;
-                    }
-                    break;
-                case 39:
-                    if(dir !== 3) {
-                        newdir = 1;
-                    }
-                    break;
-                case 40:
-                    if(dir !== 0) {
-                        newdir = 2;
-                    }
-                    break;
-                case 37:
-                    if(dir !== 1) {
-                        newdir = 3;
-                    }
-                    break;
-                case 32:
-                    if(!gstarted) {
-                        startGame();
-                    }
-                    else {
-                        togglePause();
-                    }
-                    break;
-            }
-        });
