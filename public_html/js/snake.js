@@ -14,6 +14,8 @@ var context;
 var screenWidth;
 var screenHeight;
 
+var keydown;
+
 /*-----------------------------------------------------------------------------
  * Executing Game Code
  * ----------------------------------------------------------------------------
@@ -85,6 +87,18 @@ function snakeUpdate(){
         snakeHeadX++;
     }
     
+    window.addEventListener('keydown', function(e) {
+    if (e.keyCode === 38 && direction !== 3) {
+        direction = 2; // Up
+    } else if (e.keyCode === 40 && direction !== 2) {
+        direction = 3; // Down
+    } else if (e.keyCode === 37 && direction !== 0) {
+        direction = 1; // Left
+    } else if (e.keyCode === 39 && direction !== 1) {
+        direction = 0; // Right
+    }
+});
+        
     var snakeTail = snake.pop();
     snakeTail.x = snakeHeadX;
     snakeTail.y = snakeHeadY;
