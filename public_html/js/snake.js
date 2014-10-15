@@ -24,7 +24,7 @@ var keydown;
 gameInitialize();
 snakeInitialize(); 
 foodInitialize();
-setInterval(gameLoop, 1000/30);
+setInterval(gameLoop, 800/30);
 
 /*-----------------------------------------------------------------------------
  * Game Functions
@@ -123,7 +123,10 @@ function setFoodPosition(){
     food.x = randomX;
     food.y = randomY;
 }
-
+/*-----------------------------------------------------------------------------
+ * Keyboard Functions
+ * ----------------------------------------------------------------------------
+ */
 function keyboardHandler(event) {
     console.log(event);
 }
