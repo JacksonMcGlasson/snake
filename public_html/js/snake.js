@@ -56,7 +56,7 @@ function gameDraw(){
     context.fillRect(0, 0, screenWidth, screenHeight);
 }		
 /*-----------------------------------------------------------------------------
- * Snake Functions
+ * Snake Functions 
  * ----------------------------------------------------------------------------
  */
 
