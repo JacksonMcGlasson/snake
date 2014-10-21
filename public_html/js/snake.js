@@ -10,7 +10,7 @@ var snakeDirection;
 
 var food;
 
-var context;
+var context; 
 var screenWidth;
 var screenHeight;
 
