@@ -141,18 +141,19 @@ function setFoodPosition(){
 function keyboardHandler(event) {
     console.log(event);
     if(event.keyCode == "39" && snakeDirection != "left"){
-        snakeDirection = "right"
+        snakeDirection = "right";
     }
+    
     else if(event.keyCode == "40" && snakeDirection != "up" ){
-        snakeDirection = "down"
+        snakeDirection = "down";
     }
        
     else if(event.keyCode == "37" && snakeDirection != "right"){
-        snakeDirection = "left"
+        snakeDirection = "left";
     }
     
     else if(event.keyCode == "38" && snakeDirection != "down"){
-        snakeDirection = "up"
+        snakeDirection = "up";
     }
     
 }
