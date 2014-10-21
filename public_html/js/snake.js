@@ -76,7 +76,7 @@ function snakeInitialize(){
 
 function snakeDraw(){
     for(var index = 0; index < snake.length; index++) {
-        context.fillStyle = "black";
+        context.fillStyle = "mediumspringgreen";
         context.fillRect(snake[index].x * snakeSize, snake[index].y * snakeSize, snakeSize, snakeSize); 
     }
 }
@@ -123,7 +123,7 @@ function foodInitialize() {
 }
 
 function foodDraw() {
-    context.fillStyle = "black";
+    context.fillStyle = "crimson";
     context.fillRect(food.x * snakeSize, food.y * snakeSize, snakeSize, snakeSize);
 }
 
