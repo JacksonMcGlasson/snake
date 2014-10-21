@@ -77,7 +77,7 @@ function snakeInitialize(){
 function snakeDraw(){
     for(var index = 0; index < snake.length; index++) {
         context.fillStyle = "black";
-        context.fillRect(snake[index].x * snakeSize, snake[index].y * snakeSize, snakeSize, snakeSize);
+        context.fillRect(snake[index].x * snakeSize, snake[index].y * snakeSize, snakeSize, snakeSize); 
     }
 }
 
@@ -169,7 +169,7 @@ function checkFoodCollisions(snakeHeadX , snakeHeadY) {
             y: 0
         });
         snakeLength++;
-        
+        setFoodPosition();
     }
 }
 
