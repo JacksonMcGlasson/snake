@@ -123,8 +123,10 @@ function foodInitialize() {
 }
 
 function foodDraw() {  
+   
     context.fillStyle = "crimson";
     context.fillRect(food.x * snakeSize, food.y * snakeSize, snakeSize, snakeSize);  
+    
 }
 
 function setFoodPosition(){
@@ -162,7 +164,7 @@ function keyboardHandler(event) {
  * Collision Handling
  * ----------------------------------------------------------------------------
  */
-
+//eat food//
 function checkFoodCollisions(snakeHeadX , snakeHeadY) {
     if(snakeHeadX == food.x && snakeHeadY == food.y){
         snake.push({
@@ -173,10 +175,10 @@ function checkFoodCollisions(snakeHeadX , snakeHeadY) {
         setFoodPosition();
     }
 }
-
+//causes death//
 function checkWallCollisions(snakeHeadX , snakeHeadY) {
-    if(snakeHeadX * snakeSize >= screenWidth || snakeHeadX * snakeSize < 0) {
+    if(snakeHeadX * snakeSize >= screenWidth || snakeHeadX * snakeSize < 0  ) {
         console.log("Wall Collision"); 
-        index<0;
+      
     }
 }
