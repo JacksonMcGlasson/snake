@@ -169,7 +169,7 @@ function keyboardHandler(event) {
  * Collision Handling
  * ----------------------------------------------------------------------------
  */
-//eat food//
+//when snake eats food//
 function checkFoodCollisions(snakeHeadX, snakeHeadY) {
     if (snakeHeadX == food.x && snakeHeadY == food.y) {
         snake.push({
@@ -180,17 +180,20 @@ function checkFoodCollisions(snakeHeadX, snakeHeadY) {
         setFoodPosition();
     }
 }
-//causes death//
+//when snake hits a wall//
 function checkWallCollisions(snakeHeadX, snakeHeadY) {
+    //wall collisions left and right//
     if (snakeHeadX * snakeSize >= screenWidth || snakeHeadX * snakeSize < 0) {
         console.log("Wall Collision");
         setState("GAME OVER");
     }
+    //wall collisions up and down//
     if (snakeHeadY * snakeSize >= screenHeight || snakeHeadY * snakeSize < 0) {
         console.log("Wall Collision");
         setState("GAME OVER");
     }
 }
+//when snake head hits snake body//
 function checkSnakeCollisions(snakeHeadX, snakeHeadY) {
     for (var index = 1; index < snake.length; index++) {
         if (snakeHeadX == snake[index].x && snakeHeadY == snake[index].y) {
