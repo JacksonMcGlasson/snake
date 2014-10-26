@@ -6,3 +6,30 @@ body{
 #game-screen{
     display: block;
 } 
+
+#gameOver {
+    position: absolute;
+    visibility: hidden
+}
+
+h1, h3 {
+    font-family: 'Press Start 2P', cursive;
+    color: mediumspringgreen;
+    text-align: center;
+}
+
+.title {
+    font-size: 62px;
+    margin-bottom: 0px;
+    margin-top: 0px; 
+}
+
+#restartButton {
+    font-size: 30px;
+    border: 2px solid mediumspringgreen;
+    border-radius: 10px;
+}
+
+#restartButton:hover {
+    background-color: blue;
+}

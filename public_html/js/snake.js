@@ -15,6 +15,8 @@ var screenWidth;
 var screenHeight;
 
 var gameState;
+var gameOverMenu;
+var restartButton;
 
 /*-----------------------------------------------------------------------------
  * Executing Game Code
@@ -43,6 +45,12 @@ function gameInitialize() {
 
     document.addEventListener("keydown", keyboardHandler);
 
+    gameOverMenu = document.getElementById("gameOver");
+    centerMenuPosition(gameOverMenu);
+    
+    restartButton = document.getElementById("restartButton");
+    restartButton.addEventListener("click", gameRestart);
+
     setState("PLAY");
 }
 
@@ -58,6 +66,13 @@ function gameLoop() {
 function gameDraw() {
     context.fillStyle = "deepskyblue";
     context.fillRect(0, 0, screenWidth, screenHeight);
+}
+
+function gameRestart() { 
+    snakeInitialize();
+    foodInitialize();
+    hideMenu(gameOverMenu);
+    setState("PLAY");
 }
 /*-----------------------------------------------------------------------------
  * Snake Functions 
@@ -210,4 +225,29 @@ function checkSnakeCollisions(snakeHeadX, snakeHeadY) {
 
 function setState(state) {
     gameState = state;
+    showMenu(state);
+}
+
+/*-----------------------------------------------------------------------------
+ * Menu functions
+ * ----------------------------------------------------------------------------
+ */
+
+function displayMenu(menu) {
+    menu.style.visibility = "visible";
+}
+
+function hideMenu(menu) {
+    menu.style.visibility = "hidden";
+}
+
+function showMenu(state) {
+    if(state == "GAME OVER") {
+        displayMenu(gameOverMenu);
+    }
+}
+
+function centerMenuPosition(menu) {
+    menu.style.top = (screenHeight / 2) - (menu.offsetHeight / 2) + "px";
+    menu.style.left = (screenWidth / 2) - (menu.offsetWidth / 2) + "px";
 }
